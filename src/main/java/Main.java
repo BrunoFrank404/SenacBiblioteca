@@ -1,8 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Livro;
-import model.Usuario;
+import model.entities.Livro;
+import model.entities.Usuario;
 
 public class Main {
     private static List<Usuario> usuarios = new ArrayList<>();
@@ -42,7 +42,7 @@ public class Main {
 
     // Método Cadastrar usuario
     public static void cadastrarUsuario(String nome, String email, String senha) {
-        Usuario novoUsuario = new Usuario(proximoIdUsuario, nome, email, senha);
+        Usuario novoUsuario = new Usuario(proximoIdUsuario, nome, email, senha, cpf);
         usuarios.add(novoUsuario);
         proximoIdUsuario++;
         System.out.println("Usuário cadastrado: " + nome);
