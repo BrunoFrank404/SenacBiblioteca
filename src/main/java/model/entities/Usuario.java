@@ -1,32 +1,36 @@
 package model.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tb_usuario")
 public class Usuario {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
     private String nome;
     private String cpf;
     private String email;
     private String senha;
 
-@Entity
+
+
     public Usuario() {}
 
-    public Usuario(int id, String nome, String email, String senha,  String cpf) {
+    public void setId(long id) {
         this.id = id;
-        this.cpf = cpf;
-        this.nome = nome;
-        this.email = email;
-        this.senha = senha;
     }
 
+    public String getCpf() {
+        return cpf;
+    }
 
-    public int getId() {
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public long getId() {
         return id;
     }
 
